@@ -7,14 +7,14 @@ const Destinations = ({ destinations }) => {
   return (
     <div
       className='
-        bg-amber-600
+      
       '
     >
       {destinations.map((destination) =>{
         return (
           <h3
             className='
-              hover:cursor-pointer bg-amber-200
+              
             '
             key={destination.id}
             onClick={() => navigate(`/destination/${destination.id}`, {state: destination})}
