@@ -7,20 +7,25 @@ const Destinations = ({ destinations }) => {
   return (
     <div
       className='
-      
+        flex flex-wrap
       '
     >
       {destinations.map((destination) =>{
         return (
-          <h3
+          <div
             className='
-              
+              bg-white opacity-60
+              w-1/4 h-[450px]
+              m-[5px]
             '
             key={destination.id}
             onClick={() => navigate(`/destination/${destination.id}`, {state: destination})}
           >
-            {destination.id}. {destination.city} - {destination.region}
-          </h3>
+            <div className={`bg-[url('../assets/example.png')] w-[250px] h-[250px] `} />
+            <h3>
+              {destination.id}. {destination.city} - {destination.region}
+            </h3>
+          </div>
         )
       })}
     </div>
