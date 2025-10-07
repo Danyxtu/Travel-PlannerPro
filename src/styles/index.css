@@ -1,1 +1,14 @@
+@font-face {
+  font-family: Poppins;
+  src: url('../assets/fonts/Poppins-ExtraLightItalic.ttf');
+}
+
 @import "tailwindcss";
+
+.nav-txt{
+  @apply text-white text-[20px];
+}
+/* In your index.css or globals.css */
+.text-outline {
+  -webkit-text-stroke: 2px gray; /* width + color *//* optional: shows only the border */
+}
