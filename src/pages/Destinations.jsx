@@ -14,7 +14,11 @@ user -> unput ->  Day 1
 */
 const Destinations = ({ destinations }) => {
   const navigate = useNavigate();
-  const [state, setState] = useState([]);
+  const [favorites, setFavorites] = useState(() => {
+    const saved = localStorage.getItem('favorites');
+    return saved ? JSON.parse(saved) : [];
+  });
+
   const [searchParams, setSearchParams] = useSearchParams();
   const q = searchParams.get("q") || "";
   let filtered = destinations.filter((destination) =>
@@ -22,12 +26,15 @@ const Destinations = ({ destinations }) => {
     destination.region.toLowerCase().includes(q.toLowerCase())
   );
 
-  const isClicked = (id) =>{
-    setState((prevState) =>
-      prevState.includes(id) ? 
+  const toggleFavorites = (id) =>{
+    setFavorites((prevState) => {
+      const newFavorites = prevState.includes(id) ? 
         prevState.filter((i) => i !== id):
         [...prevState, id]
-    )
+    
+    localStorage.setItem("favorites", JSON.stringify(newFavorites));
+    return newFavorites;
+  });
   }
 
   return (
@@ -114,10 +121,9 @@ const Destinations = ({ destinations }) => {
                       text-[20px] z-10 
                       hover:cursor-pointer
                       active:scale-80 transition-transform duration-100
-                      ${state.includes(destination.id) ? 'fill-red-600' : 'bg-none'}
+                      ${favorites.includes(destination.id) ? 'fill-red-600' : 'bg-none'}
                     `}
-                    key={destination.id}
-                    onClick={() => isClicked(destination.id)}
+                    onClick={() => toggleFavorites(destination.id)}
                   />
                 </div>
               </div>

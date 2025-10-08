@@ -11,11 +11,26 @@ const Destination = () => {
 
   return (
     <div>
+      <img src="" alt="" />
       <h1>
         {destination.id} <br />
         {destination.city} <br />
         {destination.region} <br />
       </h1>
+      <table>
+        <thead>
+          
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+      <button
+
+        onClick={() => navigate(`itinerary`, {state: destination})}
+      >
+        Travel Plan
+      </button>
     </div>
   )
 }
