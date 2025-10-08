@@ -24,7 +24,6 @@ const Layout = () => {
       default:
         navigate('/');
         break;
-
     }
   }
   
@@ -37,7 +36,7 @@ const Layout = () => {
     > {/* Background will be here */}
       <Header onNavigate={handleNavigation} /> {/* To Do */}
       <main>
-        <Outlet />
+        <Outlet /> {/**/}
       </main>
     </div>
   )
