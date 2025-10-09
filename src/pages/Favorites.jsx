@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Heart } from "lucide-react";
+import { Divide, Heart } from "lucide-react";
 import image from "../assets/example.png"; // Replace with your image
 import { useNavigate } from "react-router-dom";
 
@@ -42,13 +42,23 @@ const FavoritesPage = ({ destinations }) => {
     <div 
       className="
         flex flex-wrap justify-center 
-        gap-[30px] mt-[20px]
+        gap-[10px] mt-[20px]
       "
       >
+      <h1
+        className="
+          w-full
+          text-start
+          text-[40px] text-white
+          font-bold pl-[80px] text-outline
+        "
+      >
+        Favorites
+      </h1>
       <div
         className='
           flex flex-wrap justify-center gap-[30px]
-          h-[601px] w-full
+          h-[530px] w-full
           overflow-y-scroll
           mt-[20px]
         '
@@ -73,10 +83,10 @@ const FavoritesPage = ({ destinations }) => {
             "
           >
             <img
-              src={image}
+              src={destination.images[0]}
               className="
                  rounded-[10px]
-                  h-[300px] w-[240px]
+                  min-h-[300px] w-[240px]
                   transition-transform duration-300 
                   hover:scale-110 hover:cursor-pointer
                   active:scale-105
@@ -101,7 +111,9 @@ const FavoritesPage = ({ destinations }) => {
               </h3>
               <Heart
                 className="
-                  text-[20px] hover:cursor-pointer fill-red-600 "
+                  text-[20px] hover:cursor-pointer fill-red-600 
+                  active:scale-95
+                  "
                 onClick={() => removeFavorite(destination.id)}
               />
             </div>

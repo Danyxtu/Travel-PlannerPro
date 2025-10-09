@@ -72,7 +72,7 @@ const Destinations = ({ destinations }) => {
             <div
               className='
                 bg-[rgba(255,255,255,0.6)]
-                min-h-[430px] sm:w-1/2 md:w-1/3 lg:w-1/5
+                min-h-[430px] max-h-[430px] sm:w-1/2 md:w-1/3 lg:w-1/5
                 rounded-[15px]
               '
               key={destination.id}
@@ -88,14 +88,15 @@ const Destinations = ({ destinations }) => {
                 '
               >
                 <img 
-                  src={image}
+                  src={destination.images[0]}
                   className='
                     rounded-[10px]
-                    h-[300px] w-[240px]
+                    min-h-[300px] w-[240px]
                     transition-transform duration-300 
                     hover:scale-110 hover:cursor-pointer
                     active:scale-105
                   '
+                  alt={destination.city}
                   onClick={() => navigate(`/destination/${destination.id}`, {state: destination})}
                 />
                 <div
