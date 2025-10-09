@@ -2,7 +2,7 @@ import React from 'react'
 import danny from '../assets/danny.jpg'
 import charles from '../assets/charles.jpg'
 import Ameer from '../assets/Ameer.jpg'
-import Sheena from '../assets/Sheena.jpg'
+import sheena from '../assets/sheena.jpg'
 import Benedict from '../assets/Benedict.jpg'
 import Footer from '../components/Footer'
 
