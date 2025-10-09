@@ -126,7 +126,7 @@ const Itinerary = () => {
         <tbody>
           {itinerary.length === 0 ? (
             <tr>
-              <td colSpan="5" className="text-center py-4 text-gray-400">
+              <td colSpan="5" className="text-center font-bold bg-[rgba(255,255,255,0.3)] py-4 text-gray-900">
                 No activities yet. Click “Add Activity” to start planning!
               </td>
             </tr>
