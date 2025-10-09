@@ -73,7 +73,7 @@ const About = () => {
                 className="w-[300px] h-[200px] object-cover rounded-lg 
                 transform transition-transform duration-300 hover:scale-110"/>
               <h1 className="font-bold mt-4">Ameer Sabtal</h1>
-              <h2 className="text-sm">Gooner</h2>
+              <h2 className="text-sm">Quality Assurance & Assistant UI/UX Designer</h2>
             </div>
           </div>
         </div>
