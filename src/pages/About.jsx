@@ -6,10 +6,22 @@ import Sheena from '../assets/Sheena.jpg'
 import Benedict from '../assets/Benedict.jpg'
 import Footer from '../components/Footer'
 
-const About = () => {
+const About = () => { 
   return (
-    <div>
-      <h1 className="text-4xl font-bold text-center mt-8 ">The Developers:</h1>
+    <div className='h-screen overflow-y-scroll'> 
+      <div>
+        <h1 className= 'text-4xl font-poppins font-bold text-center mt-8'> 
+          ABOUT TRAVEL PLANNER PRO 
+        </h1> 
+        <div>
+        <p className='text-center font-poppins font-semibold text-lg mt-15 mx-8 pb-8 bg-[rgba(255,255,255,0.5)] text-black p-5 rounded-lg shadow-lg'> 
+            Travel Planner Pro is an all-in-one app that helps you organize trips with ease. 
+            Plan itineraries, book flights, track expenses, and discover destinations all in one place. 
+            Stay organized, save time, and enjoy a hassle-free travel experience.
+          </p>
+        </div> 
+      </div>
+      <h1 className="text-4xl font-bold text-center  mt-[400px] ">The Developers:</h1> 
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-row justify-center items-center gap-8 flex-wrap">
           <div className="bg-white text-black p-5 rounded-lg shadow-lg ">
