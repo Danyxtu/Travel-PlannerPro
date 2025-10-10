@@ -13,7 +13,8 @@ const Home = () => {
           bg-gradient-to-r from-[#cce5ff] via-[#e0f7ff] to-[#a3bffa]
           text-transparent bg-clip-text
           drop-shadow-[0_0_15px_rgba(173,216,230,0.4)]
-        '
+sm:text-[50px]       
+'
       >
         Travel Planner Pro
       </h1>
