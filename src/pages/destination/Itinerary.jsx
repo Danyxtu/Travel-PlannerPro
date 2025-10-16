@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ArrowLeft, Plus, X, Edit3, Trash2 } from "lucide-react";
+import { ArrowLeft, Plus, X, Edit3, Trash2, CheckCircle } from "lucide-react"; // ✅ Added CheckCircle
 
 const Itinerary = () => {
   const location = useLocation();
@@ -27,7 +27,9 @@ const Itinerary = () => {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
 
-  // Save itinerary to localStorage whenever it changes
+  // Notification state
+  const [notification, setNotification] = useState({ visible: false, message: "" });
+
   useEffect(() => {
     localStorage.setItem(
       `itinerary-${destination.id}`,
@@ -41,11 +43,14 @@ const Itinerary = () => {
   };
 
   const addPlan = () => {
-    if (!form.day || !form.time || !form.activity)
-      return alert("Please fill all required fields");
+    if (!form.day || !form.time || !form.activity) {
+      showToast("Please fill all required fields", "error");
+      return;
+    }
 
     setItinerary([...itinerary, { id: Date.now(), ...form }]);
     resetForm();
+    showToast("Plan added successfully!");
   };
 
   const editPlan = (item) => {
@@ -67,6 +72,7 @@ const Itinerary = () => {
       )
     );
     resetForm();
+    showToast(" Plan updated successfully!");
   };
 
   const resetForm = () => {
@@ -85,6 +91,13 @@ const Itinerary = () => {
     setItinerary(itinerary.filter((item) => item.id !== deleteId));
     setConfirmDelete(false);
     setDeleteId(null);
+    showToast(" Plan deleted successfully!");
+  };
+
+  //Notification function
+  const showToast = (message) => {
+    setNotification({ visible: true, message });
+    setTimeout(() => setNotification({ visible: false, message: "" }), 3000);
   };
 
   return (
@@ -126,7 +139,10 @@ const Itinerary = () => {
         <tbody>
           {itinerary.length === 0 ? (
             <tr>
-              <td colSpan="5" className="text-center font-bold bg-[rgba(255,255,255,0.3)] py-4 text-gray-900">
+              <td
+                colSpan="5"
+                className="text-center font-bold bg-[rgba(255,255,255,0.3)] py-4 text-gray-900"
+              >
                 No activities yet. Click “Add Activity” to start planning!
               </td>
             </tr>
@@ -244,6 +260,14 @@ const Itinerary = () => {
               </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {/*--- Toast Notification --- */}
+      {notification.visible && (
+        <div className="fixed bottom-6 right-6 bg-green-600 text-white px-4 py-3 rounded-lg flex items-center gap-2 shadow-lg animate-fadeIn z-50">
+          <CheckCircle size={20} className="text-white" />
+          <span className="font-semibold">{notification.message}</span>
         </div>
       )}
     </div>

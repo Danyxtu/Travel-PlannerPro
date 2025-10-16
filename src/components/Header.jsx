@@ -30,7 +30,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <nav
-        className={`fixed top-0 right-0 h-full w-[250px] bg-blue-200 z-20 flex flex-col items-start p-6 space-y-4 transform transition-transform duration-300 
+        className={`fixed top-0 right-0 h-full w-[250px] bg- z-20 flex flex-col items-start p-6 space-y-4 transform transition-transform duration-300 
         ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}
       >
         <button className="self-end hover:cursor-pointer mb-4" onClick={toggleNav}>
@@ -62,7 +62,7 @@ const Header = () => {
             to={link.to}
             className={({ isActive }) =>
               `
-              relative pb-1 transition-all duration-300 font-medium
+              relative text-[20px] pb-1 transition-all duration-300 font-medium
               after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px]
               after:bg-white after:transition-all after:duration-300
               ${isActive ? 'after:w-full' : 'after:w-0 hover:after:w-full hover:opacity-70'}
