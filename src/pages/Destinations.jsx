@@ -51,7 +51,8 @@ const Destinations = ({ destinations }) => {
             bg-white opacity-80
             outline-none rounded-[8px]
             font-poppins font-semibold
-            w-[500px]
+            w-[250px] sm:w-[500px]
+
 
           '
           value={q}
