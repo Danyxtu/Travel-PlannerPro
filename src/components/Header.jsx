@@ -30,7 +30,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <nav
-        className={`fixed top-0 right-0 h-full w-[250px] bg- z-20 flex flex-col items-start p-6 space-y-4 transform transition-transform duration-300 
+        className={`fixed top-0 right-0 h-full bg-blue-200/80 w-[250px] bg- z-20 flex flex-col items-start p-6 space-y-4 transform transition-transform duration-300 
         ${navOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}
       >
         <button className="self-end hover:cursor-pointer mb-4" onClick={toggleNav}>
