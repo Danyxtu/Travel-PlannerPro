@@ -97,7 +97,7 @@ const Itinerary = () => {
           className="w-[50px] h-[35px] hover:cursor-pointer hover:bg-[rgba(255,255,255,0.3)] rounded-md"
           onClick={() => navigate(-1)}
         />
-        <h1 className="text-[40px] font-bold w-full pl-[30px]">
+        <h1 className="text-[40px] text-outline font-bold w-full pl-[30px]">
           {destination.city} - {destination.region}
         </h1>
       </div>
