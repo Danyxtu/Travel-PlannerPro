@@ -9,7 +9,8 @@ const Header = () => {
     { to: '/favorites', label: 'Favorites' },
     { to: '/about', label: 'About' },
   ]
-
+  console.log('Header rendered');
+  
   const [navOpen, setNavOpen] = useState(false)
 
   const toggleNav = () => setNavOpen(!navOpen)
